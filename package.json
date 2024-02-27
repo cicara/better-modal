@@ -1,6 +1,6 @@
 {
   "name": "@cicara/better-modal",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "a tool to help simplify antd modal state management",
   "type": "module",
   "module": "./dist/index.js",
