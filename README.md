@@ -66,7 +66,7 @@ pnpm add @cicara/better-modal
    import { MyModal } from "./my-modal";
 
    export function App() {
-     const myModal = useModal<string>(MyModal);
+     const myModal = useModal(MyModal);
 
      return <div>{myModal.placeholder}</div>;
    }
@@ -81,11 +81,11 @@ pnpm add @cicara/better-modal
    import { useCallback } from "react";
 
    export function App() {
-     const myModal = useModal<string>(MyModal);
+     const myModal = useModal(MyModal);
 
      const handleOpenModal = useCallback(async () => {
        try {
-         const result = await myModal.show({ value: "hungtcs" });
+         const result = await myModal.show<string>({ value: "hungtcs" });
          alert(result);
        } catch (err) {
          alert(err);

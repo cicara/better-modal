@@ -1,7 +1,6 @@
-import { Input, Modal } from "antd";
-import { useModalContext } from "../lib";
-import { Form } from "antd";
+import { Form, Input, Modal } from "antd";
 import { useCallback, useEffect } from "react";
+import { useModalContext } from "../lib";
 
 export type MyModalProps = {
   value?: string;
