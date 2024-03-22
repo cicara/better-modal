@@ -1,14 +1,14 @@
 import { Button } from "antd";
+import { useCallback } from "react";
 import { useModal } from "../lib";
 import { MyModal } from "./my-modal";
-import { useCallback } from "react";
 
 export function App() {
-  const myModal = useModal<string>(MyModal);
+  const myModal = useModal(MyModal);
 
   const handleOpenModal = useCallback(async () => {
     try {
-      const result = await myModal.show({ value: "hungtcs" });
+      const result = await myModal.show<string>({ value: "hungtcs" });
       alert(result);
     } catch (err) {
       alert(err);

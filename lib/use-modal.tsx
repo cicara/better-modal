@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useRef, useState, type ComponentType } from "react";
-import { ModalContext, ModalContextValue } from "./context";
+import { ComponentType, useCallback, useMemo, useRef, useState } from "react";
+import { ModalContext } from "./context";
 
 export type ShowFunc<P, R = unknown> = (props: P) => Promise<R>;
 
@@ -8,10 +8,10 @@ type PromiseFuncs<V, R> = {
   resolve: (value: V) => void;
 };
 
-export function useModal<R = unknown, P = object>(ModalComponent: ComponentType<P>) {
+export function useModal<P>(ModalComponent: ComponentType<P>) {
   const [visible, setVisible] = useState(false);
 
-  const promiseRef = useRef<PromiseFuncs<R, unknown>>();
+  const promiseRef = useRef<PromiseFuncs<any, unknown>>();
   const [modalProps, setModalProps] = useState<P>();
 
   const placeholder = useMemo(() => {
@@ -35,7 +35,7 @@ export function useModal<R = unknown, P = object>(ModalComponent: ComponentType<
     );
   }, [ModalComponent, modalProps, visible]);
 
-  const show = useCallback<ShowFunc<P, R>>(async (props) => {
+  const show = useCallback(async function <R>(props: P) {
     try {
       setModalProps(props);
       setVisible(true);
