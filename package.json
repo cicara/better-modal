@@ -7,7 +7,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --project tsconfig.lib.json"
+    "build": "tsc --project tsconfig.lib.json",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "react",
