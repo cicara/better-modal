@@ -1,5 +1,6 @@
 {
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
-  }
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js"
 }

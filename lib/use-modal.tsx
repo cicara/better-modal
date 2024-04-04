@@ -1,5 +1,5 @@
 import { ComponentType, useCallback, useMemo, useRef, useState } from "react";
-import { ModalContext } from "./context";
+import { ModalContext } from "./context.js";
 
 export type ShowFunc<P, R = unknown> = (props: P) => Promise<R>;
 
