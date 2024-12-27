@@ -47,10 +47,15 @@ export function useModal<P>(ModalComponent: ComponentType<P>) {
     }
   }, []);
 
+  const update = useCallback((props: P) => {
+    setModalProps(props);
+  }, []);
+
   return useMemo(() => {
     return {
       show,
+      update,
       placeholder,
     };
-  }, [placeholder, show]);
+  }, [placeholder, show, update]);
 }
